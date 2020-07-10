@@ -1,24 +1,12 @@
-#include <SFML/Graphics.hpp>
+#include "game.hpp"
 
-int main()
-{
-    sf::RenderWindow window(sf::VideoMode(200, 200), "SFML works!");
-    sf::CircleShape shape(100.f);
-    shape.setFillColor(sf::Color::Green);
+int main() {
+    // create a new game object
+    Game game;
 
-    while (window.isOpen())
-    {
-        sf::Event event;
-        while (window.pollEvent(event))
-        {
-            if (event.type == sf::Event::Closed)
-                window.close();
-        }
+    // run the game loop
+    game.gameLoop();
 
-        window.clear();
-        window.draw(shape);
-        window.display();
-    }
-
+    // exit program when window closed.
     return 0;
 }
